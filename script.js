@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
             const data = parseCSV(csvText);
             const data2014 = data.filter(d => d.Year === 2014);
 
-            // Prepare data for line chart (TOTAL production for each crop type in 2014, excluding "TOTAL")
             const cropTypes = ["Padi", "Jagung", "Ubi Kayu", "Ubi Jalar"];
             const lineChartData = cropTypes.map(crop => {
                 return {
@@ -40,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            // Prepare data for bar chart (TOTAL crop production from 2011 to 2015)
             const barChartData = cropTypes.map(crop => {
                 return {
                     label: crop,
@@ -76,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            // Prepare data for horizontal bar chart (Padi production in specific regions in 2014)
             const regions = ["JAWA BARAT", "JAWA TENGAH", "JAWA TIMUR", "DI YOGYAKARTA", "BANTEN"];
             const horizontalBarChartData = data2014.filter(d => d.Crop === "Padi" && regions.includes(d.Region));
 
@@ -127,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
     function parseCSV(csvText) {
-        const rows = csvText.split('\n').slice(1); // Remove header row
+        const rows = csvText.split('\n').slice(1);
         return rows.map(row => {
             const [Region, Year, Value, Crop] = row.split(',');
             return { Region, Year: +Year, Value: +Value, Crop };
