@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualizations</title>
+    <style>
+        .chart-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            flex-direction: column;
+            width: 150%;
+        }
+        .chart-box {
+            width: 45%;
+            margin: 20px;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Visualizations</h1>
+    <div class="chart-container">
+        <div class="chart-box">
+            <canvas id="line-chart"></canvas>
+        </div>
+        <div class="chart-box">
+            <canvas id="bar-chart"></canvas>
+        </div>
+        <div class="chart-box">
+            <canvas id="horizontal-bar-chart"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
